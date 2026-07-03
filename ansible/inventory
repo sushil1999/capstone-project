@@ -1,0 +1,5 @@
+[kubernetes_master]
+k8-master ansible_host=172.31.41.239 ansible_user=ubuntu
+
+[kubernetes_worker]
+k8-worker ansible_host=172.31.37.117 ansible_user=ubuntu

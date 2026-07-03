@@ -1,10 +1,10 @@
 # DevOps Capstone Project - E-Commerce Microservices Platform
 
-## Project Overview
+## Overview
 
-This project demonstrates the deployment of a microservices-based E-Commerce application using modern DevOps tools and practices.
+This project demonstrates a complete DevOps implementation of an E-Commerce Microservices application using Docker, Jenkins, Kubernetes, Terraform, and Ansible.
 
-The application consists of:
+## Application Components
 
 - React Frontend
 - Product Service (Node.js)
@@ -12,78 +12,34 @@ The application consists of:
 - Inventory Service (Node.js)
 - MySQL Database
 
-All services are containerized using Docker and deployed on a Kubernetes cluster.
-
----
-
 ## Technologies Used
 
 - AWS EC2
-- Ubuntu
+- Ubuntu 24.04
 - Docker
 - Docker Hub
-- Kubernetes (kubeadm)
-- Calico CNI
-- MySQL
-- React
-- Node.js
 - Jenkins
+- Kubernetes
 - Terraform
 - Ansible
-- Prometheus
-- Grafana
+- React
+- Node.js
+- MySQL
 
----
+## Project Structure
 
-## Project Architecture
-
-Developer
-
-↓
-
-GitHub
-
-↓
-
-Jenkins CI/CD
-
-↓
-
-Docker Images
-
-↓
-
-Docker Hub
-
-↓
-
-Kubernetes Cluster
-
-↓
-
-Frontend
-
-↓
-
-Product Service
-
-↓
-
-Order Service
-
-↓
-
-Inventory Service
-
-↓
-
-MySQL Database
-
-↓
-
-Prometheus & Grafana
-
----
+```
+frontend/
+product-service/
+order-service/
+inventory-service/
+kubernetes/
+terraform/
+ansible/
+Jenkinsfile
+README.md
+schema.sql
+```
 
 ## Docker Images
 
@@ -92,9 +48,7 @@ Prometheus & Grafana
 - sushilsaroya/order-service
 - sushilsaroya/inventory-service
 
----
-
-## Kubernetes Components
+## Kubernetes Resources
 
 - Namespace
 - Secret
@@ -106,71 +60,36 @@ Prometheus & Grafana
 - Order Deployment
 - Inventory Deployment
 - Frontend Deployment
-- ClusterIP Services
-- NodePort Services
+- Services
 
----
+## Deployment Steps
 
-## Features
+Build Images
 
-- Add Products
-- View Products
-- Create Orders
-- View Orders
-- Inventory Management
-- Persistent MySQL Storage
-
----
-
-## Project Structure
-
-```
-frontend/
-product-service/
-order-service/
-inventory-service/
-kubernetes/
-Jenkinsfile
-schema.sql
-README.md
-```
-
----
-
-## Deployment
-
-Build Docker Images
-
-```
+```bash
 docker build
 docker push
 ```
 
-Deploy to Kubernetes
+Deploy Application
 
-```
+```bash
 kubectl apply -f kubernetes/
 ```
 
 Verify
 
-```
+```bash
 kubectl get pods -n ecommerce
 kubectl get svc -n ecommerce
 ```
 
----
-
-## Application
-
-Frontend
+## Application URL
 
 ```
 http://<Worker_Public_IP>:30080
 ```
 
----
-
 ## Author
 
-Sushil Saroya
+**Sushil Kumar**
